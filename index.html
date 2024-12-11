@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Haven - Your Beauty Destination</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="text-2xl font-bold text-purple-600">Glamour Haven</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-purple-600 transition">Home</a>
+                    <a href="/services.html" class="text-gray-700 hover:text-purple-600 transition">Services</a>
+                    <a href="/gallery.html" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="/booking.html" class="text-gray-700 hover:text-purple-600 transition">Book Now</a>
+                    <a href="/contact.html" class="text-gray-700 hover:text-purple-600 transition">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-purple-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="/" class="block py-2 text-gray-700 hover:text-purple-600">Home</a>
+                <a href="/services.html" class="block py-2 text-gray-700 hover:text-purple-600">Services</a>
+                <a href="/gallery.html" class="block py-2 text-gray-700 hover:text-purple-600">Gallery</a>
+                <a href="/booking.html" class="block py-2 text-gray-700 hover:text-purple-600">Book Now</a>
+                <a href="/contact.html" class="block py-2 text-gray-700 hover:text-purple-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 animated-gradient fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="text-center">
+                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                    <span class="block">Welcome to Glamour Haven</span>
+                    <span class="block text-purple-600">Your Beauty Destination</span>
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    Experience luxury beauty services tailored just for you. Our expert stylists are ready to transform your look.
+                </p>
+                <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                    <div class="rounded-md shadow">
+                        <a href="/booking.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 md:py-4 md:text-lg md:px-10">
+                            Book Your Appointment
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-12 bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">What Our Clients Say</h2>
+            <div class="relative">
+                <div class="testimonials-carousel overflow-hidden">
+                    <div class="testimonials-track flex transition-transform duration-300 ease-out">
+                        <!-- Testimonials will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-16 bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900">Who We Are</h2>
+                <p class="mt-4 text-xl text-gray-600">Your Premier Beauty Destination</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-600">Welcome to Glamour Haven, where beauty meets luxury. Since 2015, we've been dedicated to providing exceptional beauty services in a serene and sophisticated environment.</p>
+                    <p class="text-lg text-gray-600">Our commitment to using eco-friendly, premium products and staying ahead of the latest beauty trends sets us apart. We believe in enhancing your natural beauty while providing a relaxing, personalized experience.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600"><span id="years-count">0</span>+</div>
+                            <div class="text-gray-600 mt-2">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600"><span id="clients-count">0</span>+</div>
+                            <div class="text-gray-600 mt-2">Happy Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600"><span id="stylists-count">0</span>+</div>
+                            <div class="text-gray-600 mt-2">Expert Stylists</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-96">
+                    <img src="images/si.jpg" alt="Salon Interior" class="rounded-lg shadow-xl object-cover w-full h-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900">Our Expert Stylists</h2>
+                <p class="mt-4 text-xl text-gray-600">Meet the talented team behind your transformation</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 team-grid">
+                <!-- Team members will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900">Our Work Speaks for Itself</h2>
+                <p class="mt-4 text-xl text-gray-600">Browse through our collection of transformations</p>
+            </div>
+            <div class="gallery-grid" id="gallery">
+                <img src="images/Gallery/1.jpg" alt="Gallery image 1" class="gallery-item">
+                <img src="images/Gallery/2.jpg" alt="Gallery image 2" class="gallery-item">
+                <img src="images/Gallery/3.jpg" alt="Gallery image 1" class="gallery-item">
+                <img src="images/Gallery/4.jpg" alt="Gallery image 1" class="gallery-item">
+                <img src="images/Gallery/5.jpg" alt="Gallery image 1" class="gallery-item">
+                <img src="images/Gallery/6.jpg" alt="Gallery image 1" class="gallery-item">
+                <img src="images/Gallery/7.jpg" alt="Gallery image 1" class="gallery-item">
+                <img src="images/Gallery/8.jpg" alt="Gallery image 1" class="gallery-item">
+                <img src="images/Gallery/9.jpg" alt="Gallery image 1" class="gallery-item">
+
+
+
+            </div>
+            <div class="text-center mt-8">
+                <a href="/gallery.html" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition">
+                    View Full Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900">Our Pricing</h2>
+                <p class="mt-4 text-xl text-gray-600">Affordable luxury for everyone</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pricing-grid">
+                <!-- Pricing cards will be dynamically inserted here -->
+            </div>
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">* Prices may vary based on hair length and thickness</p>
+                <p class="text-gray-600">* Additional services can be combined for package deals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900">Special Offers</h2>
+                <p class="mt-4 text-xl text-gray-600">Exclusive deals and packages</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 offers-grid">
+                <!-- Offers will be dynamically inserted here -->
+            </div>
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-2">* All offers subject to availability</p>
+                <p class="text-gray-600">* Cannot be combined with other promotions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900">Frequently Asked Questions</h2>
+                <p class="mt-4 text-xl text-gray-600">Find answers to common questions</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4" id="faq-accordion">
+                <!-- FAQ items will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900">Get in Touch</h2>
+                <p class="mt-4 text-xl text-gray-600">We'd love to hear from you</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <form class="space-y-6 contact-form">
+                        <div class="relative">
+                            <input type="text" id="name" name="name" 
+                                class="block w-full px-4 py-3 text-gray-700 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-0 transition-colors peer"
+                                placeholder=" "
+                                required
+                            >
+                            <label for="name" 
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 px-2 peer-focus:px-2 peer-focus:text-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+                            >Name</label>
+                        </div>
+
+                        <div class="relative">
+                            <input type="email" id="email" name="email" 
+                                class="block w-full px-4 py-3 text-gray-700 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-0 transition-colors peer"
+                                placeholder=" "
+                                required
+                            >
+                            <label for="email" 
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 px-2 peer-focus:px-2 peer-focus:text-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+                            >Email</label>
+                        </div>
+
+                        <div class="relative">
+                            <textarea id="message" name="message" rows="4" 
+                                class="block w-full px-4 py-3 text-gray-700 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-0 transition-colors peer"
+                                placeholder=" "
+                                required
+                            ></textarea>
+                            <label for="message" 
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 px-2 peer-focus:px-2 peer-focus:text-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+                            >Message</label>
+                        </div>
+
+                        <button type="submit" 
+                            class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                        >
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="space-y-6">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..." width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="space-y-4">
+                        <p class="flex items-center text-gray-600"><i class="fas fa-map-marker-alt w-6"></i> 123 Beauty Street, New York, NY 10001</p>
+                        <p class="flex items-center text-gray-600"><i class="fas fa-phone w-6"></i> (555) 123-4567</p>
+                        <p class="flex items-center text-gray-600"><i class="fas fa-envelope w-6"></i> info@glamourhaven.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Glamour Haven</h3>
+                    <p class="text-gray-300">Your ultimate destination for beauty and wellness.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="/services.html" class="text-gray-300 hover:text-white">Services</a></li>
+                        <li><a href="/booking.html" class="text-gray-300 hover:text-white">Book Now</a></li>
+                        <li><a href="/contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>123 Beauty Street</li>
+                        <li>New York, NY 10001</li>
+                        <li>Phone: (555) 123-4567</li>
+                        <li>Email: info@glamourhaven.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-300">&copy; 2024 Glamour Haven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
