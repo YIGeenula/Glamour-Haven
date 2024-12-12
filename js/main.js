@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     // Populate services section
-    const servicesContainer = document.querySelector('.grid');
+    const servicesContainer = document.querySelector('.services-section .grid');
     if (servicesContainer) {
         services.forEach(service => {
             const serviceCard = `
