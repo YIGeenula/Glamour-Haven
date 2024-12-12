@@ -21,11 +21,11 @@
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="/" class="text-gray-700 hover:text-purple-600 transition">Home</a>
-                    <a href="/services.html" class="text-gray-700 hover:text-purple-600 transition">Services</a>
-                    <a href="/gallery.html" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
-                    <a href="/booking.html" class="text-gray-700 hover:text-purple-600 transition">Book Now</a>
-                    <a href="/contact.html" class="text-gray-700 hover:text-purple-600 transition">Contact</a>
+                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-purple-600 transition">Services</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="booking.html" class="text-gray-700 hover:text-purple-600 transition">Book Now</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-purple-600 transition">Contact</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -40,11 +40,11 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <a href="/" class="block py-2 text-gray-700 hover:text-purple-600">Home</a>
-                <a href="/services.html" class="block py-2 text-gray-700 hover:text-purple-600">Services</a>
-                <a href="/gallery.html" class="block py-2 text-gray-700 hover:text-purple-600">Gallery</a>
-                <a href="/booking.html" class="block py-2 text-gray-700 hover:text-purple-600">Book Now</a>
-                <a href="/contact.html" class="block py-2 text-gray-700 hover:text-purple-600">Contact</a>
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-purple-600">Home</a>
+                <a href="services.html" class="block py-2 text-gray-700 hover:text-purple-600">Services</a>
+                <a href="gallery.html" class="block py-2 text-gray-700 hover:text-purple-600">Gallery</a>
+                <a href="booking.html" class="block py-2 text-gray-700 hover:text-purple-600">Book Now</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-purple-600">Contact</a>
             </div>
         </div>
     </nav>
@@ -76,7 +76,107 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Cards will be dynamically inserted here -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-2xl">
+                    <div class="relative">
+                        <img src="images/Our-Service/HaircutStyling.jpg" alt="Haircut & Styling" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-6 card-content">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Haircut & Styling</h3>
+                        <p class="text-gray-600 mb-4">Professional haircut and styling by our expert stylists.</p>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check text-purple-600 mr-2"></i>
+                                Consultation Included
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check text-purple-600 mr-2"></i>
+                                Style Recommendations
+                            </li>
+                        </ul>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-purple-600 font-bold text-2xl">From $60</span>
+                            </div>
+                            <span class="text-sm text-gray-500">60 mins</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/booking.html" class="block text-center bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-2xl">
+                    <div class="relative">
+                        <img src="images/Our-Service/HairColoring.jpg" alt="Hair Coloring" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Premium
+                        </div>
+                    </div>
+                    <div class="p-6 card-content">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Hair Coloring</h3>
+                        <p class="text-gray-600 mb-4">Full hair coloring service with premium products.</p>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check text-purple-600 mr-2"></i>
+                                Premium Color Products
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check text-purple-600 mr-2"></i>
+                                Color Protection Kit
+                            </li>
+                        </ul>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-purple-600 font-bold text-2xl">From $120</span>
+                            </div>
+                            <span class="text-sm text-gray-500">120 mins</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/booking.html" class="block text-center bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-2xl">
+                    <div class="relative">
+                        <img src="images/Our-Service/Treatment.jpg" alt="Spa Treatments" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Luxurious
+                        </div>
+                    </div>
+                    <div class="p-6 card-content">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Spa Treatments</h3>
+                        <p class="text-gray-600 mb-4">Indulge in our luxurious spa treatments for ultimate relaxation.</p>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check text-purple-600 mr-2"></i>
+                                Premium Products
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check text-purple-600 mr-2"></i>
+                                Relaxation Session
+                            </li>
+                        </ul>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-purple-600 font-bold text-2xl">From $90</span>
+                            </div>
+                            <span class="text-sm text-gray-500">90 mins</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/booking.html" class="block text-center bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -163,7 +263,7 @@
 
             </div>
             <div class="text-center mt-8">
-                <a href="/gallery.html" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition">
+                <a href="gallery.html" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition">
                     View Full Gallery
                 </a>
             </div>
