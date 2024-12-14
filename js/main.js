@@ -592,6 +592,80 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize smooth scrolling
     initSmoothScrolling();
+
+    // Update your existing booking form handler
+    document.getElementById('booking-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Show loading state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const submitText = submitBtn.querySelector('.submit-text');
+        const loadingSpinner = submitBtn.querySelector('.loading-spinner');
+        
+        submitText.classList.add('hidden');
+        loadingSpinner.classList.remove('hidden');
+        submitBtn.disabled = true;
+
+        try {
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Add formatted data for email
+            const serviceSelect = document.getElementById('service');
+            const otherServiceField = document.getElementById('other-service');
+            const dateField = document.getElementById('date');
+            const timeField = document.getElementById('time');
+            const stylistField = document.getElementById('stylist');
+            
+            // Format the date
+            const formattedDate = new Date(dateField.value).toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Get the final service value
+            const finalService = serviceSelect.value === 'other' ? 
+                otherServiceField.value : 
+                serviceSelect.options[serviceSelect.selectedIndex].text;
+
+            // Add formatted content for email
+            formData.append('service_details', `
+                Service: ${finalService}
+                Date: ${formattedDate}
+                Time: ${timeField.value}
+                Stylist: ${stylistField.options[stylistField.selectedIndex].text}
+            `);
+
+            // Submit to Web3Forms
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                // Show success popup
+                showPopup();
+                // Reset form
+                this.reset();
+                document.getElementById('other-service-input').classList.add('hidden');
+            } else {
+                throw new Error('Submission failed');
+            }
+
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error submitting your booking. Please try again.');
+        } finally {
+            // Reset button state
+            submitText.classList.remove('hidden');
+            loadingSpinner.classList.add('hidden');
+            submitBtn.disabled = false;
+        }
+    });
 });
 
 // Add this after your DOMContentLoaded event handler
