@@ -42,7 +42,7 @@
                     <a href="#services" class="text-gray-700 hover:text-purple-600 transition">Services</a>
                     <a href="gallery.html" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
                     <a href="booking.html" class="text-gray-700 hover:text-purple-600 transition">Book Now</a>
-                    <a href="index.html#contact" class="text-gray-700 hover:text-purple-600 transition">Contact</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 transition">Contact</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -339,7 +339,11 @@
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="space-y-8">
-                    <form class="space-y-6 contact-form">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6 contact-form">
+
+                        <!-- Replace with your Access Key -->
+                        <input type="hidden" name="access_key" value="ccaf1f73-d67e-4944-be29-7272727e9ada">
+
                         <div class="relative">
                             <input type="text" id="name" name="name" 
                                 class="block w-full px-4 py-3 text-gray-700 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-0 transition-colors peer"
@@ -372,6 +376,8 @@
                                 class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 px-2 peer-focus:px-2 peer-focus:text-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
                             >Message</label>
                         </div>
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                         <button type="submit" 
                             class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
