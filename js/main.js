@@ -1,5 +1,19 @@
-// Mobile menu functionality
+// Add this at the beginning of your DOMContentLoaded event handler
 document.addEventListener('DOMContentLoaded', function() {
+    // Add splash screen functionality
+    const splashScreen = document.getElementById('splash-screen');
+    const body = document.body;
+    
+    // Prevent scrolling while splash screen is active
+    body.classList.add('splash-active');
+    
+    // Hide splash screen after a set time
+    setTimeout(() => {
+        splashScreen.classList.add('hide');
+        body.classList.remove('splash-active');
+    }, 2500); // Adjust timing as needed
+
+    // Mobile menu functionality
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -47,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="text-gray-500">${service.duration}</span>
                         </div>
                         <div class="card-footer">
-                            <a href="/booking.html" class="block text-center bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
+                            <a href="/Glamour-Haven/booking.html" class="block text-center bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
                                 Book Now
                             </a>
                         </div>
@@ -352,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             `).join('')}
                         </ul>
                         <div class="card-footer mt-6">
-                            <a href="/booking.html" class="block text-center bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
+                            <a href="/Glamour-Haven/booking.html" class="block text-center bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
                                 Book Now
                             </a>
                         </div>
@@ -428,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="text-sm text-gray-500">${offer.validUntil}</span>
                         </div>
                         <div class="card-footer">
-                            <a href="/booking.html" class="block text-center bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
+                            <a href="/Glamour-Haven/booking.html" class="block text-center bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
                                 Book Now
                             </a>
                         </div>
@@ -575,6 +589,9 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transition = 'opacity 0.8s ease-in, transform 0.8s ease-in';
         observer.observe(element);
     });
+
+    // Initialize smooth scrolling
+    initSmoothScrolling();
 });
 
 // Add this after your DOMContentLoaded event handler
@@ -609,7 +626,7 @@ function createServiceCard(service) {
                     <span class="text-purple-600 font-bold text-xl">$${service.price}</span>
                     <span class="text-gray-500">${service.duration} min</span>
                 </div>
-                <button onclick="location.href='/booking.html'" class="w-full mt-4 bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
+                <button onclick="location.href='/Glamour-Haven/booking.html'" class="w-full mt-4 bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition">
                     Book Now
                 </button>
             </div>
@@ -632,3 +649,48 @@ const services = [
 // Insert services into the grid
 document.querySelector('.services-section .grid').innerHTML = 
     services.map(service => createServiceCard(service)).join('');
+
+function initSmoothScrolling() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Get the height of the fixed header
+                const header = document.querySelector('nav');
+                const headerHeight = header.offsetHeight;
+                
+                // Get the element's position relative to the viewport
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                
+                // Calculate the final scroll position with a small offset for better spacing
+                const offsetPosition = window.pageYOffset + elementPosition - headerHeight - 20;
+                
+                // Smooth scroll to the target
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // If mobile menu is open, close it after clicking
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu.classList.contains('block')) {
+                    mobileMenu.classList.remove('block');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+}

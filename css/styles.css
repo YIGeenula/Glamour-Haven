@@ -85,96 +85,96 @@
 }
 
 /* Add these styles for the gallery section */
+.gallery-container {
+    width: 100%;
+    padding: 20px 0;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 200px;
-    gap: 1rem;
-    max-height: 650px; /* Limits to roughly 3 rows */
-    overflow: hidden;
+    grid-auto-rows: 300px;
+    gap: 20px;
+    width: 100%;
 }
 
-.gallery-grid img {
+/* Create varying sizes for more dynamic layout */
+.gallery-item {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-
-/* Varying sizes for images */
-.gallery-grid > img:nth-child(4n+1) {
+/* Make some images span multiple rows/columns for variety */
+.gallery-item:nth-child(4n+1) {
+    grid-column: span 2;
     grid-row: span 2;
 }
 
-.gallery-grid > img:nth-child(8n+3) {
+.gallery-item:nth-child(8n+3) {
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(12n+8) {
     grid-column: span 2;
+}
+
+/* Hover effects */
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 250px;
+    }
 }
 
 @media (max-width: 768px) {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 150px;
+        grid-auto-rows: 200px;
+        gap: 15px;
     }
-}
-
-/* Full gallery page styles */
-.full-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.full-gallery-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.full-gallery-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-
-/* Varying sizes for images */
-.full-gallery-grid > img:nth-child(4n+1) {
-    grid-row: span 2;
-}
-
-.full-gallery-grid > img:nth-child(8n+3) {
-    grid-column: span 2;
-}
-
-@media (max-width: 1024px) {
-    .full-gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
+    
+    .gallery-item:nth-child(4n+1) {
+        grid-column: auto;
+        grid-row: auto;
     }
-}
-
-@media (max-width: 768px) {
-    .full-gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 150px;
+    
+    .gallery-item:nth-child(8n+3) {
+        grid-row: auto;
+    }
+    
+    .gallery-item:nth-child(12n+8) {
+        grid-column: auto;
+    }
+    
+    /* New mobile-specific spans */
+    .gallery-item:nth-child(6n+1) {
+        grid-column: span 2;
     }
 }
 
 @media (max-width: 480px) {
-    .full-gallery-grid {
+    .gallery-grid {
         grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+        gap: 15px;
     }
     
-    .full-gallery-grid > img:nth-child(n) {
-        grid-column: span 1;
-        grid-row: span 1;
-        height: 300px;
+    .gallery-item:nth-child(n) {
+        grid-column: 1;
     }
 }
 
@@ -309,4 +309,114 @@
 
 .service-card-content {
     padding: 1.5rem;
+}
+
+/* Add these at the top of the file */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+#splash-screen {
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: #9333ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#splash-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Optional: Add this if you want to prevent scrolling while splash screen is visible */
+body.splash-active {
+    overflow: hidden;
+}
+
+/* Update the navbar z-index */
+nav.fixed {
+    z-index: 40;
+}
+
+/* Add these new loading bar styles */
+.loading-bar {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+}
+
+#splash-progress {
+    height: 3px;
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.5) 100%);
+    border-radius: 3px;
+    width: 0;
+    transition: width 0.3s ease-out;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.loading-dots span {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Optional: Add a gradient background to the splash screen for more modern look */
+#splash-screen {
+    background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 } 
