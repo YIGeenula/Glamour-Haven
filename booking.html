@@ -59,7 +59,14 @@
             </div>
 
             <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
-                <form id="booking-form" class="space-y-6">
+                <form id="booking-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                    <!-- Add Web3Forms access key - Replace with your actual access key from web3forms.com -->
+                    <input type="hidden" name="access_key" value="ccaf1f73-d67e-4944-be29-7272727e9ada">
+                    
+                    <!-- Add these hidden fields to customize the email -->
+                    <input type="hidden" name="from_name" value="Glamour Haven Booking">
+                    <input type="hidden" name="subject" value="New Booking Request">
+                    
                     <!-- Service Selection -->
                     <div>
                         <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Select Service</label>
@@ -151,11 +158,17 @@
                             placeholder="Any special requests or additional information..."></textarea>
                     </div>
 
+                    <!-- Add honeypot field for spam protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                     <!-- Submit Button -->
                     <div>
                         <button type="submit"
                             class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
-                            Book Appointment
+                            <span class="submit-text">Book Appointment</span>
+                            <span class="loading-spinner hidden">
+                                <i class="fas fa-spinner fa-spin"></i> Processing...
+                            </span>
                         </button>
                     </div>
                 </form>
