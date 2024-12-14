@@ -419,4 +419,127 @@ nav.fixed {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Gallery styles */
+.masonry-gallery {
+    columns: 4 300px;
+    column-gap: 20px;
+    padding: 20px 0;
+    height: auto !important;
+    min-height: 100vh;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+}
+
+.masonry-item img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.masonry-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.masonry-item-overlay i {
+    color: white;
+    font-size: 24px;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.05);
+}
+
+.masonry-item:hover .masonry-item-overlay {
+    opacity: 1;
+}
+
+/* Filter buttons */
+.filter-btn {
+    padding: 8px 20px;
+    border-radius: 25px;
+    background: white;
+    color: #666;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    border-color: #9333ea;
+    color: #9333ea;
+}
+
+.filter-btn.active {
+    background: #9333ea;
+    color: white;
+    border-color: #9333ea;
+}
+
+/* Modal styles */
+.modal {
+    transition: opacity 0.3s ease;
+}
+
+.modal-image {
+    transition: transform 0.3s ease;
+}
+
+.modal-nav {
+    padding: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.modal-nav:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .masonry-gallery {
+        columns: 2 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .masonry-gallery {
+        columns: 1 auto;
+    }
+}
+
+/* Add these to ensure proper scrolling */
+html, body {
+    height: auto !important;
+    overflow-y: auto !important;
+    position: relative;
+}
+
+/* Update section styles */
+section.pb-16 {
+    min-height: 0;
+    height: auto;
+    overflow: visible;
+}
+
+/* Container styles */
+.max-w-7xl {
+    height: auto;
+    overflow: visible;
 } 
