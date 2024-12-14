@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { src: 'images/Gallery/24.jpg', category: 'treatments' },
         { src: 'images/Gallery/25.jpg', category: 'styling' }
     ];
-
     // Initialize gallery
     function initGallery() {
         galleryItems.forEach((item, index) => {
@@ -48,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
             gallery.appendChild(div);
         });
     }
-
     // Filter functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(btn => {
@@ -61,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.classList.add('active');
         });
     });
-
     function filterGallery(filter) {
         const items = document.querySelectorAll('.masonry-item');
         items.forEach(item => {
@@ -72,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
     // Modal functionality
     function openModal(index) {
         currentImageIndex = index;
@@ -80,27 +76,22 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     }
-
     function closeModal() {
         modal.classList.add('hidden');
         document.body.style.overflow = 'auto';
     }
-
     function navigateModal(direction) {
         currentImageIndex = (currentImageIndex + direction + galleryItems.length) % galleryItems.length;
         modalImage.src = galleryItems[currentImageIndex].src;
     }
-
     // Modal event listeners
     modal.querySelector('.modal-close').addEventListener('click', closeModal);
     modal.querySelector('.prev').addEventListener('click', () => navigateModal(-1));
     modal.querySelector('.next').addEventListener('click', () => navigateModal(1));
-
     // Close modal on background click
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
-
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (!modal.classList.contains('hidden')) {
@@ -109,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.key === 'ArrowRight') navigateModal(1);
         }
     });
-
     // Initialize gallery
     initGallery();
 }); 
